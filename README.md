@@ -2,7 +2,7 @@
 
 FundForGood is a web application that connects donors with charitable causes, allowing users to browse, donate to, and manage contributions to various fundraising campaigns.
 
-\n\n
+
 
 ## Features
 
@@ -12,7 +12,7 @@ FundForGood is a web application that connects donors with charitable causes, al
 - **User Dashboard:** Track donations and manage account settings.
 - **Responsive Design:** Built with Tailwind CSS and Flowbite CSS framework for responsive and accessible design.
 
-\n\n
+
 
 ## Technologies Used
 
