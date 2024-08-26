@@ -73,7 +73,7 @@ const DonateNow = () => {
     }, [navigate]);
 
     return (
-        <section className="container mx-auto py-8 flex flex-col gap-5">
+        <section className="max-w-6xl mx-auto py-8 flex flex-col gap-5">
             <div>
                 <nav className="flex px-5 py-3 text-gray-700 sm:border sm:border-gray-200 sm:rounded-lg sm:bg-gray-50" aria-label="Breadcrumb">
                     <ol className="inline-flex flex-wrap items-center gap-x-1 md:gap-x-2 text-lg font-semibold">

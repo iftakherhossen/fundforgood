@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Campaigns, Deposit, DonateNow, FundraiseDetails, GetStarted, Home, NotFound, Profile, ReviewUs } from "./Pages";
-import { Layout, ProtectedRoute, ScrollToTop, ScrollToTopButton } from "./components";
+import { AboutUs, Contact, Layout, ProtectedRoute, ScrollToTop, ScrollToTopButton } from "./components";
 import { Toaster } from "react-hot-toast"
 import { AuthProvider } from "./hooks/useAuth";
 
@@ -19,6 +19,8 @@ function App() {
           <Route path="/user/:username/" element={<Layout><ProtectedRoute component={Profile} /></Layout>} />
           <Route path="/user/:username/deposit" element={<Layout><ProtectedRoute component={Deposit} /></Layout>} />
           <Route path="/review-us" element={<Layout><ProtectedRoute component={ReviewUs} /></Layout>} />
+          <Route path="/contact" element={<Layout contact={true}><Contact contact={true} /></Layout>} />
+          <Route path="/about-us" element={<Layout about={true}><AboutUs about={true} /></Layout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster position="bottom-center" reverseOrder={false} />

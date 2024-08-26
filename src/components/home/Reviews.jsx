@@ -15,7 +15,7 @@ const Reviews = () => {
     }, []);
   
     return (
-        <section id="reviews" className="container mx-auto py-20 flex flex-col gap-5">
+        <section id="reviews" className="max-w-6xl mx-auto py-20 flex flex-col gap-5">
             <div className="h-20 flex justify-center items-start">
                 <h3 className="text-4xl font-semibold tracking-wide">User <span className="font-extrabold text-[#425F57]">Feedback</span></h3>
             </div>

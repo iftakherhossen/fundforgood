@@ -56,7 +56,7 @@ const Deposit = () => {
     };
 
     return (
-        <section className="container mx-auto py-20 flex flex-col gap-5">
+        <section className="max-w-6xl mx-auto py-20 flex flex-col gap-5">
             <div className="flex justify-center items-center px-5 mb-5">
                 <h3 className="w-[90%] mx-auto text-3xl sm:text-4xl font-extrabold tracking-wide text-[#425F57] text-center">Deposit Balance</h3>
             </div>

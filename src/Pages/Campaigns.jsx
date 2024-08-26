@@ -36,7 +36,7 @@ const Campaigns = () => {
     });
 
     return (
-        <section className="container mx-auto py-20 flex flex-col gap-5">
+        <section className="max-w-6xl mx-auto py-20 flex flex-col gap-5">
             <div className="flex flex-col justify-center items-center gap-3 px-4 mb-8">
                 <h3 className="text-4xl font-extrabold tracking-wide text-[#425F57] text-center">Ongoing Campaigns</h3>
                 <p className="text-gray-400 font-medium">If you wanna list any campaign, please contact with us</p>

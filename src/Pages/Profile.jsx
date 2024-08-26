@@ -51,7 +51,7 @@ const Profile = () => {
     }, [pageNo]);
 
     return (
-        <section className="container mx-auto py-20 px-5">
+        <section className="max-w-6xl mx-auto py-20 px-5">
             <div className="w-full max-w-4xl 2xl:max-w-5xl mx-auto flex flex-col gap-5">
                 <ProfileDetails data={userDetails?.user} donations={donationsCount} formatCount={formatCount} />
                 <div title="Deposit to Donate" className="bg-gray-50 border border-gray-200 rounded-lg px-6 py-3 select-none shadow-sm-light">

@@ -13,6 +13,7 @@ import RegistrationComponent from "./get_started/RegistrationComponent";
 import Pagination from "./common/Pagination";
 import ProfileDetails from "./user/ProfileDetails";
 import Stats from "./home/Stats";
+import Stat from "./home/Stat";
 import Notification from "./common/Notification";
 import Confetti from "./common/Confetti";
 import ScrollToTop from "./common/ScrollToTop";

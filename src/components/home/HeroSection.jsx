@@ -22,20 +22,20 @@ const HeroSection = () => {
                     <path id="Extended_image wrap_10" fillRule="evenodd" clipRule="evenodd" d="M22.8881 211.714C22.4913 218.676 25.4833 226.36 20.9447 231.747C16.1839 237.397 7.87838 237.765 0.408196 238.395C-8.08458 239.112 -17.085 240.379 -24.0171 235.54C-31.9219 230.022 -39.882 220.979 -37.8121 211.714C-35.7861 202.646 -22.3499 202.622 -15.2757 196.415C-8.98928 190.9 -7.9009 179.708 0.408198 178.183C9.13924 176.581 18.5001 182.07 23.3626 189.323C27.717 195.818 23.3297 203.966 22.8881 211.714Z" stroke="#CFFF8D" strokeOpacity="0.3" strokeWidth="0.5"></path>
                 </svg>
             </div>                
-            <div className="container mx-auto flex flex-col justify-center items-center py-20"> 
+            <div className="max-w-6xl mx-auto flex flex-col justify-center items-center py-20 lg:py-16"> 
                 <div className="mx-auto">
                     <img src={donationImg} alt="Hero Image" className="w-full" draggable={false} />
                 </div>                     
-                <div className="flex flex-col justify-center items-center gap-10 mt-12 mb-20">
+                <div className="flex flex-col justify-center items-center gap-10 mt-12 lg:mt-3 mb-20">
                     <div className="px-5">
-                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center leading-normal selection:bg-white selection:text-[#425F57]">The Happiness is Giving it Away</h2>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl 2xl:text-6xl font-bold text-white text-center leading-normal selection:bg-white selection:text-[#425F57]">The Happiness is Giving it Away</h2>
                     </div>                        
                     <div className="flex gap-3 md:gap-5 mt-4 select-none">
                         <Link to="/get-started">
-                            <button type="button" className="text-[#425F57] bg-[#CFFF8D] text-lg lg:text-xl font-semibold md:font-bold md:tracking-wide rounded-full px-6 md:px-8 py-2.5 xl:py-3">Get Started</button>
+                            <button type="button" className="text-[#425F57] bg-[#CFFF8D] text-lg 2xl:text-xl font-semibold md:font-bold md:tracking-wide rounded-full px-6 md:px-8 py-2 hover:shadow">Get Started</button>
                         </Link>
                         <Link to={loggedInUser ? "/campaigns" : "/get-started"}>
-                            <button type="button" className="text-[#425F57] bg-[#CFFF8D] text-lg lg:text-xl font-semibold md:font-bold md:tracking-wide rounded-full px-6 md:px-8 py-2.5 xl:py-3">Donate Now</button>
+                            <button type="button" className="text-[#425F57] bg-[#CFFF8D] text-lg 2xl:text-xl font-semibold md:font-bold md:tracking-wide rounded-full px-6 md:px-8 py-2 hover:shadow">Donate Now</button>
                         </Link>
                     </div>
                 </div>                    

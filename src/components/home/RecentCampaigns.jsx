@@ -28,7 +28,7 @@ const RecentCampaigns = () => {
     const sortedCampaigns = randomCampaigns.map(campaign => ({ ...campaign, daysLeft: calculateDaysLeft(campaign.created_on, campaign.deadline)})).sort((a, b) => a.daysLeft - b.daysLeft).slice(0, 6);    
 
     return (
-        <section id="campaigns" className="container mx-auto py-20 flex flex-col gap-5">
+        <section id="campaigns" className="max-w-6xl mx-auto py-20 flex flex-col gap-5">
             <div className="h-20 flex justify-center items-start">
                 <h3 className="text-4xl font-semibold tracking-wide">Recent <span className="font-extrabold text-[#425F57]">Campaigns</span></h3>
             </div>

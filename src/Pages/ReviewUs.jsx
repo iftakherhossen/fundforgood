@@ -60,7 +60,7 @@ const ReviewUs = () => {
     };
 
     return (
-        <section className="container mx-auto py-5 flex flex-col gap-5">
+        <section className="max-w-6xl mx-auto py-5 flex flex-col gap-5">
             <div className="py-14 flex flex-col gap-5">
                 <div className="flex justify-center items-center px-5 mb-5">
                     <h3 className="w-[90%] mx-auto text-3xl sm:text-4xl font-bold text-[#425F57] tracking-wide text-center">Review FundForGood</h3>
