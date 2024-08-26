@@ -2,9 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-    const token = localStorage.getItem("token");
-
-    const authenticated = token ? true : false;
+    const authenticated = localStorage.getItem("token");
     
     return authenticated ? <Component {...rest} /> : <Navigate to="/get-started" replace />;
 };
