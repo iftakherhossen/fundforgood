@@ -79,7 +79,7 @@ const RegistrationComponent = () => {
                 </button>
             </div>
             <div className="relative z-0">
-                <input type={visible2 ? "text" : "password"} id="confirm_password" className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#425F57] peer select-text" placeholder=" " value={registrationData.username} onChange={handleOnChange} required />
+                <input type={visible2 ? "text" : "password"} id="confirm_password" className="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#425F57] peer select-text" placeholder=" " value={registrationData.confirm_password} onChange={handleOnChange} required />
                 <label htmlFor="confirm_password" className="absolute text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-[#425F57] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 font-semibold">Confirm Password</label>
                 <button type="button" className="absolute text-black top-3 right-3 z-10" onClick={() => setVisible2(!visible2)}>
                     {visible2 ? <FaEyeSlash className="text-xl text-black" /> : <FaEye className="text-xl text-black" />}
