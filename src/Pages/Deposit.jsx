@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useData } from '../hooks';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Deposit = () => {
-    const { API_URL, loggedInUserId } = useData();
+    const navigate = useNavigate();
+    const { API_URL, loggedInUser } = useData();
     const [depositAmount, setDepositAmount] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [depositSuccess, setDepositSuccess] = useState(false);
@@ -27,7 +29,7 @@ const Deposit = () => {
                     campaign: null,
                     amount: parseInt(depositAmount),             
                     transaction_type: 'Deposit',
-                    account: loggedInUserId,
+                    account: loggedInUser.id,
                 }),
             })
                 .then((res) => res.json())
@@ -41,7 +43,8 @@ const Deposit = () => {
                         icon: "success",
                         confirmButtonColor: "#425F57"
                     }); 
-                    setDepositAmount("");                   
+                    setDepositAmount("");
+                    navigate(`/user/${loggedInUser.user.username}`);
                 })
                 .catch((error) => {
                     setIsLoading(false);
@@ -68,9 +71,9 @@ const Deposit = () => {
                     </div>
                 </form>
             </div>
-            {depositSuccess && <div className="w-full max-w-2xl mx-auto px-6 sm:px-0 flex flex-col gap-3">
+            {/* {depositSuccess && <div className="w-full max-w-2xl mx-auto px-6 sm:px-0 flex flex-col gap-3">
                 <Notification success={true} context="deposit" />                 
-            </div>}
+            </div>} */}
         </section>
     );
 };
