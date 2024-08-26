@@ -10,11 +10,13 @@ const LoginComponent = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const { login } = useAuth();
     const { API_URL } = useData();
 
     const handleLogin = (event) => {
         event.preventDefault();
+        setIsLoading(true);
 
         fetch(`${API_URL}/users/login/`, {
             method: "POST",
@@ -26,16 +28,19 @@ const LoginComponent = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.token && data.user_id) {
+                    setIsLoading(false);
                     localStorage.setItem("token", data.token);
                     localStorage.setItem("user_id", data.user_id);
                     login(data.token, data.user_id);
                     navigate("/");
                     toast.success("Logged in successfully!")
                 } else {
+                    setIsLoading(false);
                     toast.error('Login failed');
                 }
             })
             .catch((error) => {
+                setIsLoading(false);
                 console.error("Error:", error);
                 toast.error('Login failed');
             });
@@ -55,7 +60,7 @@ const LoginComponent = () => {
                 </button>
             </div>
             <div>
-                <button type="submit" className="w-full sm:w-40 bg-[#425F57] text-white px-6 py-2 font-semibold tracking-wide rounded-lg">Login</button>
+                <button type="submit" className="w-full sm:w-40 bg-[#425F57] disabled:hover:bg-gray-50 text-white disabled:hover:text-gray-600  px-6 py-2 font-semibold tracking-wide rounded-lg disabled:cursor-not-allowed disabled:animate-pulse" disabled={isLoading}>{isLoading ? "Loading..." : "Login"}</button>
             </div>
         </form>
     );

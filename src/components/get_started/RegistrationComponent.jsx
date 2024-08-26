@@ -16,6 +16,7 @@ const RegistrationComponent = () => {
     });
     const [visible1, setVisible1] = useState(false);
     const [visible2, setVisible2] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleOnChange = (e) => {
         const { id, value } = e.target;
@@ -28,6 +29,7 @@ const RegistrationComponent = () => {
 
     const handleRegister = (event) => {
         event.preventDefault();
+        setIsLoading(true);
 
         const { password, confirmPassword } = registrationData;
 
@@ -44,15 +46,21 @@ const RegistrationComponent = () => {
                 })
                     .then((res) => res.json())
                     .then((data) => {
-                        console.log(data)
-                        navigate("/get-started")
+                        console.log(data);
+                        setIsLoading(false);
+                        navigate("/get-started");
                         toast.success("Registration completed successfully! Now Login!");                    
                     })
-                    .catch((err) => toast.error("Failed to register"));
+                    .catch((err) => {
+                        setIsLoading(false);
+                        toast.error("Failed to register")
+                    });
             } else {
+                setIsLoading(false);
                 toast.error("Password must contain eight characters, at least one letter, one number, and one special character.");
             }
         } else {
+            setIsLoading(false);
             toast.error("Password and confirm password do not match.");
         }
     };
@@ -86,7 +94,7 @@ const RegistrationComponent = () => {
                 </button>
             </div>
             <div>
-                <button type="submit" className="w-full sm:w-52 bg-[#425F57] text-white px-6 py-2.5 font-semibold tracking-wide rounded-lg">Create Account</button>
+                <button type="submit" className="w-full sm:w-40 bg-[#425F57] disabled:hover:bg-gray-50 text-white disabled:hover:text-gray-600 px-6 py-2 font-semibold tracking-wide rounded-lg disabled:cursor-not-allowed disabled:animate-pulse" disabled={isLoading}>{isLoading ? "Loading..." : "Create Account"}</button>
             </div>
         </form>
     );
