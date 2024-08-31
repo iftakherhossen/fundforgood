@@ -50,7 +50,7 @@ const Fundraise = ({ data, container, page }) => {
                             </p>
                             <FaDollarSign className="text-xl" />
                         </div>
-                        <Link to={loggedInUser ? `/campaigns/fundraise/${data.slug}/donate-now` : "/get-started"} state={{ "campaign": data}} className="w-full px-4 md:px-5 py-2.5 font-medium rounded-lg bg-[#425F57] text-white flex items-center gap-3 hover:shadow-lg" disable={data?.isFulfilled?.toString()}>
+                        <Link to={`/campaigns/fundraise/${data.slug}/donate-now`} state={{ "campaign": data}} className="w-full px-4 md:px-5 py-2.5 font-medium rounded-lg bg-[#425F57] text-white flex items-center gap-3 hover:shadow-lg" disable={data?.isFulfilled?.toString()}>
                             <button className="w-full text-lg font-semibold flex justify-between items-center gap-3">Donate Now <FaDonate className="text-xl" /></button>
                         </Link>
                         <div className="w-full px-4 md:px-5 py-2.5 font-medium rounded-lg bg-[#425F57] text-white flex justify-between items-center gap-3 hover:shadow-lg">
@@ -97,7 +97,7 @@ const Fundraise = ({ data, container, page }) => {
                                 }
                             </p>
                         </div>
-                        <Link to={loggedInUser ? `/campaigns/fundraise/${data.slug}/donate-now` : "/get-started"} state={{ "campaign": data}} className="w-full px-3 md:px-4 py-2 font-medium rounded-lg bg-[#425F57] text-white flex items-center gap-3 hover:shadow-lg disabled:cursor-not-allowed cursor-pointer" disable={data?.isFulfilled?.toString()}>
+                        <Link to={`/campaigns/fundraise/${data.slug}/donate-now`} state={{ "campaign": data}} className="w-full px-3 md:px-4 py-2 font-medium rounded-lg bg-[#425F57] text-white flex items-center gap-3 hover:shadow-lg disabled:cursor-not-allowed cursor-pointer" disable={data?.isFulfilled?.toString()}>
                             <button className="text-lg flex items-center gap-3"><FaDonate /> Donate Now</button>
                         </Link>
                         <div className="w-full px-3 md:px-5 py-2 font-medium rounded-lg bg-[#425F57] text-white flex items-center gap-3">
